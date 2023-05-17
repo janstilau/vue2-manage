@@ -52,6 +52,9 @@ compiler.plugin('compilation', function (compilation) {
 
 var context = config.dev.context
 
+// 所有的请求都会被代理到这个路径下, 通过这样的方式, 虽然各个请求, 还是发给了当前的服务器, 但是实际上获取到的值, 是从另外的线上服务器获取的. 
+// 所以实际上, 在启动的时候, 还是配置的本地服务器. 本地服务器代理数据到线上服务器. 这也是用来解决 CORS 的一种方式. 
+// 之前所说的代理, 只是可能里面的内容, 在这里实际用上了. 
 switch(process.env.NODE_ENV){
     case 'local': var proxypath = 'http://localhost:8001'; break;
     case 'online': var proxypath = 'http://elm.cangdu.org'; break;

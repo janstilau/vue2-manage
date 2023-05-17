@@ -1,95 +1,166 @@
-body, div, span, header, footer, nav, section, aside, article, ul, dl, dt, dd, li, a, p, h1, h2, h3, h4,h5, h6, i, b, textarea, button, input, select, figure, figcaption {
+body,
+div,
+span,
+header,
+footer,
+nav,
+section,
+aside,
+article,
+ul,
+dl,
+dt,
+dd,
+li,
+a,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+i,
+b,
+textarea,
+button,
+input,
+select,
+figure,
+figcaption {
     padding: 0;
     margin: 0;
     list-style: none;
     font-style: normal;
     text-decoration: none;
     border: none;
-    font-family: "Microsoft Yahei",sans-serif;
-    -webkit-tap-highlight-color:transparent;
+    font-family: "Microsoft Yahei", sans-serif;
+    -webkit-tap-highlight-color: transparent;
     -webkit-font-smoothing: antialiased;
     &:focus {
         outline: none;
     }
 }
 
-/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/  
-::-webkit-scrollbar  
-{  
-    width: 0px;  
-    height: 0px;  
-    background-color: #F5F5F5;  
-}  
-  
-/*定义滚动条轨道 内阴影+圆角*/  
-::-webkit-scrollbar-track  
-{  
-    -webkit-box-shadow: inset 0 0 1px rgba(0,0,0,0);  
-    border-radius: 10px;  
-    background-color: #F5F5F5;  
-}  
-  
-/*定义滑块 内阴影+圆角*/  
-::-webkit-scrollbar-thumb  
-{  
-    border-radius: 10px;  
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);  
-    background-color: #555;  
-}  
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+    background-color: #f5f5f5;
+}
 
-input[type="button"], input[type="submit"], input[type="search"], input[type="reset"] {
+/*定义滚动条轨道 内阴影+圆角*/
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 1px rgba(0, 0, 0, 0);
+    border-radius: 10px;
+    background-color: #f5f5f5;
+}
+
+/*定义滑块 内阴影+圆角*/
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #555;
+}
+
+input[type="button"],
+input[type="submit"],
+input[type="search"],
+input[type="reset"] {
     -webkit-appearance: none;
 }
 
-textarea { -webkit-appearance: none;}   
-
-html,body{
-    height: 100%;
-    width: 100%;
-    // background-color: #F5F5F5;
+textarea {
+    -webkit-appearance: none;
 }
 
-.fillcontain{
+html,
+body {
     height: 100%;
     width: 100%;
 }
-.clear:after{
-    content: '';
+
+// 设置子控件完全占据父控件
+.fillcontain {
+    height: 100%;
+    width: 100%;
+}
+
+// 清除浮动影响. 
+.clear:after {
+    content: "";
     display: block;
     clear: both;
 }
 
-.clear{
-    zoom:1;
+.clear {
+    zoom: 1;
 }
 
-.back_img{
+// 设置背景图片不平铺并且铺满整个元素
+// 会有缩放的问题.
+.back_img {
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
 
-.margin{
+.margin {
     margin: 0 auto;
 }
 
-.left{
+// 左浮动
+.left {
     float: left;
 }
 
-.right{
+// 右浮动
+.right {
     float: right;
 }
 
-.hide{
+// 使用 display 进行了隐藏
+.hide {
     display: none;
 }
 
-.show{
+// 使用 display 进行了显示. 
+.show {
     display: block;
 }
 
-.ellipsis{
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+.ellipsis {
+    overflow: hidden; // 超出部分隐藏
+    text-overflow: ellipsis; // 超出部分显示省略号, 文字溢出的时候, 如何进行显示.
+    white-space: nowrap; // 不换行, 文本不换行, 文本会在同一行上继续
 }
+
+/*
+body, div, span, header, footer, nav, section, aside, article, ul, dl, dt, dd, li, a, p, h1, h2, h3, h4, h5, h6, i, b, textarea, button, input, select, figure, figcaption：选择器，用于选择HTML标签。
+padding: 0;：设置内边距为0。
+margin: 0;：设置外边距为0。
+list-style: none;：去除列表标记。
+font-style: normal;：设置字体样式为普通。
+text-decoration: none;：去除文本装饰。
+border: none;：去除边框。
+
+font-family: "Microsoft Yahei", sans-serif;：设置字体为"Microsoft Yahei"或sans-serif。
+-webkit-tap-highlight-color: transparent;：去除移动端点击高亮效果。
+-webkit-font-smoothing: antialiased;：字体抗锯齿。
+&:focus {outline: none;}：去除元素聚焦时的外边框。
+::-webkit-scrollbar {width: 0px;height: 0px;background-color: #f5f5f5;}：定义滚动条宽度、高度和背景颜色。
+::-webkit-scrollbar-track {-webkit-box-shadow: inset 0 0 1px rgba(0, 0, 0, 0);border-radius: 10px;background-color: #f5f5f5;}：定义滚动条轨道的内阴影和圆角。
+::-webkit-scrollbar-thumb {border-radius: 10px;-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);background-color: #555;}：定义滑块的圆角和内阴影。
+input[type="button"], input[type="submit"], input[type="search"], input[type="reset"] {-webkit-appearance: none;}：去除表单元素的默认外观。
+textarea {-webkit-appearance: none;}：去除文本框的默认外观。
+html, body {height: 100%;width: 100%;}：设置HTML和body元素的高度和宽度为100%。
+.fillcontain {height: 100%;width: 100%;}：设置元素的高度和宽度为100%。
+.clear:after {content: "";display: block;clear: both;}：清除浮动。
+.clear {zoom: 1;}：清除浮动。
+.back_img {background-repeat: no-repeat;background-size: 100% 100%;}：设置背景图片不平铺并且铺满整个元素。
+.margin {margin: 0 auto;}：设置元素水平居中。
+.left {float: left;}：设置元素向左浮动。
+.right {float: right;}：设置元素向右浮动。
+.hide {display: none;}：隐藏元素。
+.show {display: block;}：显示元素。
+.ellipsis {overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}：文本溢出时显示省略号。
+*/
